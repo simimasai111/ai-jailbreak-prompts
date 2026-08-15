@@ -16,15 +16,17 @@ ai-jailbreak-prompts/
 ├── 08-model-specific/       # 多模型定向提示词（DeepSeek R1、Grok3、Gemini2.0、Claude 2、Llama 2、Google Bard）
 ├── 09-cheatsheets/          # 提示注入速查表（2026 版体系化攻击技术 + 指令示例）
 ├── 10-resources/            # 红队研究资源索引（论文/课程/博客链接清单）
-└── by-model/                # 【按目标模型分类视图】chatgpt-openai / claude-anthropic / gemini-google-bard / grok-xai / deepseek / llama-meta / kimi-moonshot / qwen-alibaba / mistral / other-vendors / cross-model
+├── 11-chinese-jailbreaks/   # 【中文破甲专目录】JailbreakBench 中文评测数据集、JailPrompter 攻防研究、AIJailbreak、攻防靶场等
+├── 12-next-gen-models/      # 【新一代模型】Codex/GPT-5.x、Gemini 3、DeepSeek V4 Pro、ZORG 等
+└── by-model/                # 【按目标模型分类视图】codex-gpt5 / chatgpt-openai / gemini-3 / claude-anthropic / gemini-google-bard / grok-xai / deepseek-v4 / deepseek / llama-meta / kimi-moonshot / qwen-alibaba / mistral / other-vendors / cross-model
 ```
 
 ## 双维度分类
 
 本仓库提供两种分类视图：
 
-1. 按技术类别（01-10 目录）：DAN 系列、角色扮演、开发者模式、提示注入、学术数据集、解放提示词、多模型定向、速查表、资源索引。
-2. 按目标模型（by-model/ 目录）：想针对某个具体模型（如 ChatGPT、Claude、Gemini、Grok、DeepSeek、Llama、Kimi、Qwen、Mistral）找提示词时，直接进入对应模型目录。by-model 为副本视图，修改请以 01-10 原目录为准。
+1. 按技术类别/来源（01-12 目录）：DAN 系列、角色扮演、开发者模式、提示注入、学术数据集、解放提示词、多模型定向、速查表、资源索引、中文破甲、新一代模型。
+2. 按目标模型（by-model/ 目录）：想针对某个具体模型（如 Codex、ChatGPT、Claude、Gemini、Grok、DeepSeek、Llama、Kimi、Qwen、Mistral）找提示词时，直接进入对应模型目录。by-model 为副本视图，修改请以 01-12 原目录为准。
 
 ## 数据来源
 
@@ -39,6 +41,21 @@ ai-jailbreak-prompts/
 | [birdneststream/breakingbard](https://github.com/birdneststream/breakingbard) | Google Bard 越狱技巧（问题前置/语句构造绕过过滤） | 社区 |
 | [nukIeer/AI-Prompt-Injection-Cheatsheet](https://github.com/nukIeer/AI-Prompt-Injection-Cheatsheet) | 2026 版提示注入速查表：CoT 劫持、Agent 工具利用、RAG 投毒、多模态注入、防御绕过等 10 类 | MIT |
 | [PromptLabs/Prompt-Hacking-Resources](https://github.com/PromptLabs/Prompt-Hacking-Resources) | AI 红队/越狱资源索引（论文、课程、博客、社区） | 社区 |
+| [ZZZ-zero/JailbreakBench](https://github.com/ZZZ-zero/JailbreakBench) | 中文大模型越狱攻击评测数据集（2160 条越狱查询）+ 基础安全评测 + AdvBench | MIT |
+| [Asstar-X/JailPrompter](https://github.com/Asstar-X/JailPrompter) | 中文 LLM 提示词攻防研究样本（GPT-4 Dark、EVE 养成系等） | 社区 |
+| [0x7556/AIJailbreak](https://github.com/0x7556/AIJailbreak) | Gemini 3.1 Pro API 越狱提示词（ENI 人格注入） | 社区 |
+| [MDX-Tom/gpt-5.6-instruct](https://github.com/MDX-Tom/gpt-5.6-instruct) | Codex GPT-5.6-SOL 破甲提示词 v45 及历史版本（5629 star） | MIT |
+| [0x5477/deepseek-v4-pro-unrestricted](https://github.com/0x5477/deepseek-v4-pro-unrestricted) | DeepSeek V4 Pro 破甲提示词 v1-v3 及测试包 | MIT |
+| [xsser/codex-jailbreak-guide](https://github.com/xsser/codex-jailbreak-guide) | Codex CLI model_instructions_file 越狱指南（替换官方安全指令） | 社区 |
+| [BirdsAreFlyingCameras/GPT-5_Jailbreak_PoC](https://github.com/BirdsAreFlyingCameras/GPT-5_Jailbreak_PoC) | GPT-5 越狱 PoC（PROMISQROUTE 流量出口方法） | 社区 |
+| [ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-](https://github.com/ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-) | DeepSeek CAT Shadow / Gemini Flash-lite & KIMI 等 24 个跨模型提示词 | 社区 |
+| [trinib/ZORG-Jailbreak-Prompt-Text](https://github.com/trinib/ZORG-Jailbreak-Prompt-Text) | ZORG 全知人格越狱（Gemini/DeepSeek/Mistral/Qwen 等） | 社区 |
+| [langgptai/awesome-gemini-prompts](https://github.com/langgptai/awesome-gemini-prompts) | Gemini 3 越狱方法 2 套（导演式叙事/Transgressive Realism） | 社区 |
+| [y0gi357/Gemini-System-prompts](https://github.com/y0gi357/Gemini-System-prompts) | Gemini 3.1/3.5 系统提示词提取 | 社区 |
+| [xiaoliu07-sudo/xiaoliu-pojia](https://github.com/xiaoliu07-sudo/xiaoliu-pojia) | 小liu破甲——Codex CLI 13 部分结构化融合破甲 + 一键部署 | 社区 |
+| [Calrton/jailbreak-prompts](https://github.com/Calrton/jailbreak-prompts) | 精选 LLM 破甲合集（Codex 红队系统提示、L1B3RT4S 各厂商版） | MIT |
+| [gatsby-sec/llm-sec-range](https://github.com/gatsby-sec/llm-sec-range) | 大模型攻防渗透测试靶场（提示注入 CTF / OWASP LLM Top10） | 社区 |
+| [channely/ramdom_steps](https://github.com/channely/ramdom_steps) | 中文提示词越狱测试工具（离线版） | MIT |
 
 ## 技术类别说明
 
@@ -50,14 +67,17 @@ ai-jailbreak-prompts/
 6. 解放提示词（L1B3RT4S）：面向具体厂商（Anthropic/OpenAI/Google/Meta/Mistral 等 40 家）的定向提示词，部分使用 Unicode 变体选择器做 token 级混淆以绕过输入过滤。
 7. 多模型定向（08）：针对 DeepSeek R1（思维链注入）、Grok3、Gemini 2.0、Claude 2、Llama 2 的具体绕过方法，含提示泄露攻击。
 8. 速查表（09）：2026 时代体系化攻击技术——推理链劫持、Agent 工具利用、RAG 上下文投毒、系统提示提取、多模态注入、防御逃逸等，面向现代 RLHF/宪法式 AI 模型。
+9. 中文破甲（11）：面向中文大模型的越狱提示词与评测数据（JailbreakBench 2160 条中文越狱查询、GPT-4 Dark、EVE 养成系、ENI 人格注入等），含中文攻防靶场与离线测试工具。
+10. 新一代模型（12）：Codex CLI / GPT-5.x（model_instructions_file 替换、CTF Sandbox、PROMISQROUTE）、Gemini 3（导演式叙事、系统提示提取）、DeepSeek V4 Pro（UNRESTRICTED 框架）、ZORG 全知人格等 2025-2026 最新破甲方法。
 
-## 统一审查说明（2026-08-15）
+## 统一审查说明（2026-08-15 第三轮）
 
-- 文件级去重：全库 86 个文件做 MD5 校验，无完全重复文件。
-- 语义级重复（跨来源同源收录，已标注不删除）：
-  - 08-model-specific/ChatGPT.md 的 DAN v13 与 01-dan-series/The_DAN_13_0_Prompt 同源（LLM-Jailbreaks 引用自 0xk1h0/ChatGPT_DAN），已加审查说明。
-  - 08-model-specific/Llama2.md 与 02-roleplay-personas/Albert_TheRook.md 为同一模拟场景变体（相似度约 0.75，不同格式/模型包装）。
-- 超大文件处理：L1B3RT4S 的 TOKEN80M8.mkd（23MB 单行）、TOKENADE.mkd（1.8MB）仅收录 3KB 代表性片段，完整版请访问上游仓库。
+- 第三轮新增 17 个来源、42 个文件（11-chinese-jailbreaks 12 个 + 12-next-gen-models 30 个），全部经内容审查。
+- 文件级去重：新增文件与既有文件做 MD5 对比，无完全重复。
+- 语义级同源（已标注）：Calrton 精选集中的 L1B3RT4S_* 文件与 07-liberation-prompts 同源；ShadowHackrs 与 JailPrompter 均覆盖 GPT-4 Dark 类人格但版本不同；ZORG 与 Forbidden Vault 同属"全知人格"类但结构独立。
+- 超大文件处理：gpt-5.6-instruct 的 v45 zip（2.8KB）完整保留；GPT-5 PoC 的 video/mkv 等媒体文件未收录（仅 PoC 代码与文档）。
+- 编码处理：JailbreakBench 中文 CSV 为 UTF-8 BOM，已确认可正常解析（2160 条越狱查询 + 108 条种子 + 520 条 AdvBench）。
+- 既有审查结论（第二轮）：DAN v13 跨来源同源已标注；Albert/Llama2 变体同源已标注；L1B3RT4S 超大文件收录片段。
 
 ## 使用与免责声明
 

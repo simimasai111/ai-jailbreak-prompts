@@ -1,0 +1,38 @@
+{
+  "updated": "2026-06-20",
+  "note": "活跃判定：pushed_at 在近半年（2025-12-20 之后）为 active。数据采集自 GitHub API。",
+  "categories": [
+    {
+      "name": "Agent 靶场 / 易受攻击应用",
+      "repos": [
+        {"name": "opena2a-org/damn-vulnerable-ai-agent", "url": "https://github.com/opena2a-org/damn-vulnerable-ai-agent", "stars": 53, "pushed": "2026-06-15", "active": true, "desc": "故意写漏的 AI Agent 平台，安全测试/教学"},
+        {"name": "ReversecLabs/damn-vulnerable-llm-agent", "url": "https://github.com/ReversecLabs/damn-vulnerable-llm-agent", "stars": 474, "pushed": "2025-06-25", "active": false, "desc": "ReAct 注入鼻祖（银行 bot），停更但经典可用"},
+        {"name": "kyuz0/damn-vulnerable-email-agent", "url": "https://github.com/kyuz0/damn-vulnerable-email-agent", "stars": 0, "pushed": "2024-05-31", "active": false, "desc": "邮件 Agent 间接注入靶场"}
+      ]
+    },
+    {
+      "name": "OWASP LLM Top 10 靶场",
+      "repos": [
+        {"name": "AISecurityConsortium/AIGoat", "url": "https://github.com/AISecurityConsortium/AIGoat", "stars": 63, "pushed": "2026-04-24", "active": true, "desc": "完整覆盖 OWASP LLM Top10，渐进防御关卡，本地运行"},
+        {"name": "orcasecurity-research/AIGoat", "url": "https://github.com/orcasecurity-research/AIGoat", "stars": 280, "pushed": "2025-09-16", "active": false, "desc": "Orca 出品的脆弱 AI 基础设施，停更"}
+      ]
+    },
+    {
+      "name": "CTF / 闯关挑战",
+      "repos": [
+        {"name": "c-goosen/ai-prompt-ctf", "url": "https://github.com/c-goosen/ai-prompt-ctf", "stars": 33, "pushed": "2026-06-18", "active": true, "desc": "Agentic LLM CTF，专测提示注入与防护"},
+        {"name": "dhammon/ai-goat", "url": "https://github.com/dhammon/ai-goat", "stars": 347, "pushed": "2024-08-22", "active": false, "desc": "本地 CTF 关卡，无云费用，停更"},
+        {"name": "TrustAI-laboratory/LLM-Security-CTF", "url": "https://github.com/TrustAI-laboratory/LLM-Security-CTF", "stars": 17, "pushed": "2024-08-19", "active": false, "desc": "系列脆弱 LLM CTF 挑战"}
+      ]
+    },
+    {
+      "name": "聚合清单 / 资料库",
+      "repos": [
+        {"name": "ottosulin/awesome-ai-security", "url": "https://github.com/ottosulin/awesome-ai-security", "stars": 1147, "pushed": "2026-06-18", "active": true, "desc": "AI 安全资源大全，最活跃"},
+        {"name": "liu673/Awesome-LLM4Security", "url": "https://github.com/liu673/Awesome-LLM4Security", "stars": 334, "pushed": "2026-06-15", "active": true, "desc": "网络安全 + LLM 资源/工具整合"},
+        {"name": "beyefendi/awesome-llm-security", "url": "https://github.com/beyefendi/awesome-llm-security", "stars": 22, "pushed": "2026-06-05", "active": true, "desc": "LLM 安全工具/研究/文档"},
+        {"name": "yeasy/ai_security_guide", "url": "https://github.com/yeasy/ai_security_guide", "stars": 48, "pushed": "2026-06-16", "active": true, "desc": "中文：从原理到实践掌握 LLM 安全攻防"}
+      ]
+    }
+  ]
+}
