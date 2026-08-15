@@ -48,6 +48,18 @@
 24. verazuo/jailbreak_llms — https://github.com/verazuo/jailbreak_llms （CCS'24，1405 条越狱提示词，MIT）
 25. ZZZ-zero/JailbreakBench — https://github.com/ZZZ-zero/JailbreakBench （中文越狱评测数据集 2160 条，MIT）
 
+## 第六轮新增来源（2026-08-15）
+
+26. friuns2/Leaked-GPTs — https://github.com/friuns2/Leaked-GPTs （319 个泄露 GPTs 系统提示词，2464 star，MIT）
+27. RyanFcr/awesome-ChatGPT-jailbreaking — https://github.com/RyanFcr/awesome-ChatGPT-jailbreaking （ChatGPT 越狱提示词 100+ 分类汇总，中文）
+28. SecNode/AISecLists — https://github.com/SecNode/AISecLists （AI 红队清单：Guardrail Jailbreak / Prompt Extraction / 提示泄露等分类，MIT）
+29. GenAIGator/AI-RedTeaming-with-PromptFoo — https://github.com/GenAIGator/AI-RedTeaming-with-PromptFoo （PromptFoo OWASP LLM Top10 红队测试集，MIT）
+
+## 国产模型系列说明（14-25）
+
+- 智谱 GLM：L1B3RT4S ZAI.mkd（GLM-4.7 解放提示词，Unicode 变体选择器混淆）+ 24 条中文越狱测试样本
+- 字节豆包 / 百度文心 / 腾讯混元 / 讯飞星火 / MiniMax / Yi / 百川 / InternLM / 阶跃 / 商汤 / 小米：GitHub 暂未发现成熟专用越狱仓库；各系列已从 JailbreakBench 抽取 24 条代表性中文越狱查询作为测试样本，跨模型方法（11/12 目录）可直接迁移试用
+
 ## 引用格式
 
 如研究使用，请引用 CCS'24 论文:

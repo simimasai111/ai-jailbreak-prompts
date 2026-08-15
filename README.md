@@ -6,7 +6,7 @@
 
 ```
 ai-jailbreak-prompts/
-├── 01-gpt-series/          # GPT 系列：GPT-5.6 / Codex(GPT-5.5/5.4) / GPT-5 PoC / GPT-4+ChatGPT(DAN 全系列)
+├── 01-gpt-series/          # GPT 系列：GPT-5.6 / Codex(GPT-5.5/5.4) / GPT-5 PoC / GPT-4+ChatGPT / Leaked-GPTs(319个泄露GPTs)
 ├── 02-deepseek-series/     # DeepSeek 系列：V1 / R1 / V3 / V4 Flash / V4 Pro
 ├── 03-gemini-series/       # Gemini 系列：Gemini 3 / Gemini 2 / Bard
 ├── 04-claude-series/       # Claude 系列：Claude 2/3/4
@@ -17,23 +17,37 @@ ai-jailbreak-prompts/
 ├── 09-mistral-series/      # Mistral 系列
 ├── 10-other-models/        # 其他模型：Amazon/Apple/Cohere/Cursor/NVIDIA/Perplexity 等 22 家
 ├── 11-cross-model/         # 跨模型/通用：Forbidden Vault / WormGPT / ZORG / ShadowHackrs
-├── 12-methods/             # 越狱方法参考：Prompt 越狱手册 / 2026 注入速查表 / 40 种模式分类学 / 论文索引
-└── 13-datasets/            # 数据集：CCS'24 1405 条 + 0507 快照 + JailbreakBench 中文评测集
+├── 12-methods/             # 越狱方法参考：Prompt 越狱手册 / 2026 注入速查表 / 40 种模式分类学 / AISecLists / PromptFoo
+├── 13-datasets/            # 数据集：CCS'24 1405 条 + 0507 快照 + JailbreakBench 中文评测集
+├── 14-zhipu-glm-series/    # 智谱 GLM 系列（GLM-4.7 解放提示词 + 24 条中文越狱测试样本）
+├── 15-bytedance-doubao-series/   # 字节豆包系列
+├── 16-baidu-ernie-series/        # 百度文心系列
+├── 17-tencent-hunyuan-series/    # 腾讯混元系列
+├── 18-xunfei-spark-series/       # 讯飞星火系列
+├── 19-minimax-series/            # MiniMax 系列
+├── 20-yi-01ai-series/            # 零一万物 Yi 系列
+├── 21-baichuan-series/           # 百川系列
+├── 22-internlm-series/           # 书生浦语 InternLM 系列
+├── 23-stepfun-series/            # 阶跃星辰系列
+├── 24-sensetime-series/          # 商汤 SenseChat 系列
+└── 25-xiaomi-miLM-series/        # 小米 MiLM 系列
 ```
 
-每个系列目录内按具体模型版本分子目录（如 02-deepseek-series/deepseek-v4-pro/），并附 README 说明各版本覆盖情况。
+每个系列目录内按具体模型版本分子目录（如 02-deepseek-series/deepseek-v4-pro/），并附 README 说明各版本覆盖情况。国产模型系列（14-25）均含 24 条中文越狱查询测试样本（来自 JailbreakBench 数据集），其中智谱 GLM 另有 GLM-4.7 定向解放提示词；无公开专用越狱仓库的模型已在各系列 README 说明（跨模型方法可迁移）。
 
 ## 模型版本覆盖
 
 | 系列 | 已覆盖版本 | 说明 |
 |---|---|---|
-| GPT | GPT-5.6、Codex(GPT-5.5/5.4)、GPT-5、GPT-4、ChatGPT | DAN 6.0-13.0 全系列、DevMode、Codex CLI 指令覆盖法、PROMISQROUTE PoC |
+| GPT | GPT-5.6、Codex(GPT-5.5/5.4)、GPT-5、GPT-4、ChatGPT | DAN 6.0-13.0 全系列、DevMode、Codex CLI 指令覆盖法、PROMISQROUTE PoC、319 个泄露 GPTs |
 | DeepSeek | V1、R1、V3、V4 Flash、V4 Pro | V3.2 暂无专用公开仓库，R1/V3 方法可迁移 |
 | Gemini | 3.x、2.0、Bard | Gemini 3 双方法 + 3.1 系统提示提取 + 3.1 Pro API 越狱 |
 | Claude | 2/3/4（通用） | L1B3RT4S ANTHROPIC 版适用性最广 |
 | Grok | 3、Mega、xAI | 含中文"完全放飞"越狱 |
 | Llama | 2/3 | Llama 2 DAN v1 格式 + Albert 模拟场景 |
-| Kimi / Qwen / Mistral | 各系列 | 主要来自 L1B3RT4S 定向提示词 |
+| Kimi / Qwen / Mistral | 各系列 | L1B3RT4S 定向提示词 + 其他来源 |
+| 智谱 GLM | GLM-4.7 | L1B3RT4S ZAI 版解放提示词 |
+| 字节豆包 / 百度文心 / 腾讯混元 / 讯飞星火 / MiniMax / Yi / 百川 / InternLM / 阶跃 / 商汤 / 小米 | 各系列 | 24 条中文越狱查询测试样本（JailbreakBench） |
 
 ## 数据来源
 
@@ -69,6 +83,10 @@ ai-jailbreak-prompts/
 | [PromptLabs/Prompt-Hacking-Resources](https://github.com/PromptLabs/Prompt-Hacking-Resources) | AI 红队/越狱资源索引（论文、课程、博客、社区） | 社区 |
 | [gatsby-sec/llm-sec-range](https://github.com/gatsby-sec/llm-sec-range) | 大模型攻防渗透测试靶场（提示注入 CTF / OWASP LLM Top10） | 社区 |
 | [channely/ramdom_steps](https://github.com/channely/ramdom_steps) | 中文提示词越狱测试工具（离线版） | MIT |
+| [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs) | 319 个泄露的 GPTs 系统提示词（含中文 GPTs） | MIT |
+| [RyanFcr/awesome-ChatGPT-jailbreaking](https://github.com/RyanFcr/awesome-ChatGPT-jailbreaking) | ChatGPT 越狱提示词 100+ 分类汇总（中文） | 社区 |
+| [SecNode/AISecLists](https://github.com/SecNode/AISecLists) | AI 红队清单（Guardrail Jailbreak / Prompt Extraction 等分类） | MIT |
+| [GenAIGator/AI-RedTeaming-with-PromptFoo](https://github.com/GenAIGator/AI-RedTeaming-with-PromptFoo) | PromptFoo OWASP LLM Top10 红队测试集 | MIT |
 
 完整来源清单见 [SOURCES.md](SOURCES.md)。
 

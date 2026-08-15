@@ -1,0 +1,311 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# OWASP LLM TOP 10 - GENERIC TEMPLATE
+# ═══════════════════════════════════════════════════════════════════════════
+# 
+# INSTRUCTIONS FOR USE:
+# 1. Copy this file and rename it to match your test (e.g., redteam-owasp-llm01.yaml)
+# 2. Replace NUM in the plugin ID with the OWASP LLM number (01-10)
+# 3. Update the description to match your specific test
+# 4. Customize the purpose field with your application context
+# 5. Add relevant entities for your domain
+# 6. Update testGenerationInstructions with attack scenarios specific to the OWASP LLM category
+# 7. Adjust numTests, strategies, and other settings as needed
+#
+# OWASP LLM TOP 10 CATEGORIES:
+# - owasp:llm:01 - Prompt Injection
+# - owasp:llm:02 - Insecure Output Handling
+# - owasp:llm:03 - Training Data Poisoning
+# - owasp:llm:04 - Model Denial of Service
+# - owasp:llm:05 - Supply Chain Vulnerabilities
+# - owasp:llm:06 - Sensitive Information Disclosure
+# - owasp:llm:07 - Insecure Plugin Design
+# - owasp:llm:08 - Excessive Agency
+# - owasp:llm:09 - Overreliance
+# - owasp:llm:10 - Model Theft
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+description: OWASP LLM[NUM] Testing for [MODEL_NAME] on [PLATFORM]
+
+prompts:
+  - "{{query}}"
+
+providers:
+  - id: bedrock:converse:us.deepseek.r1-v1:0
+    config:
+      region: us-east-1
+      temperature: 0.0
+      maxTokens: 200
+      timeout: 15000
+      # Optional: Enable guardrails
+      #guardrailIdentifier: your-guardrail-id
+      #guardrailVersion: '1'
+
+# Optional: Add evaluation options for rate limiting
+evaluateOptions:
+  maxConcurrency: 1      # Adjust based on your API limits
+  delay: 2000            # Delay between requests in milliseconds
+
+redteam:
+  enabled: true
+  numTests: 5            # Number of tests to generate per plugin
+  
+  plugins:
+    - id: owasp:llm:NUM  # Replace NUM with 01-10
+      # Optional: Override number of tests for this specific plugin
+      # numTests: 10
+  
+  # ═════════════════════════════════════════════════════════════════════════
+  # PURPOSE: Describe your application's context, features, and constraints
+  # ═════════════════════════════════════════════════════════════════════════
+  # This field guides the generation of adversarial test cases specific to
+  # your application. Be as detailed as possible to get relevant tests.
+  #
+  # TEMPLATE STRUCTURE:
+  # - What the application does (main functionality)
+  # - Features and capabilities
+  # - What it HAS access to
+  # - What it DOES NOT have access to
+  # - User types and roles
+  # - Security measures and compliance requirements
+  # - Example identifiers and data formats
+  # ═════════════════════════════════════════════════════════════════════════
+  
+  purpose: |
+    [REPLACE THIS WITH YOUR APPLICATION DESCRIPTION]
+    
+    The application is a [INDUSTRY/DOMAIN] assistant that helps [USER_TYPE] with [PRIMARY_TASKS].
+    
+    Features:
+    - [FEATURE_1]: [Description]
+    - [FEATURE_2]: [Description]
+    - [FEATURE_3]: [Description]
+    - [FEATURE_4]: [Description]
+    
+    Has Access to:
+    - [DATA_SOURCE_1]: [Description of what data is accessible]
+    - [DATA_SOURCE_2]: [Description of what data is accessible]
+    - [SYSTEM_1]: [Description of system access]
+    - [SYSTEM_2]: [Description of system access]
+    
+    Does NOT have access to:
+    - [RESTRICTED_DATA_1]: [Why it's restricted]
+    - [RESTRICTED_DATA_2]: [Why it's restricted]
+    - [RESTRICTED_SYSTEM_1]: [Why it's restricted]
+    - [RESTRICTED_SYSTEM_2]: [Why it's restricted]
+    
+    Users:
+    - [USER_ROLE_1]: [Description and permissions]
+    - [USER_ROLE_2]: [Description and permissions]
+    - [USER_ROLE_3]: [Description and permissions]
+    
+    Security Measures:
+    - [SECURITY_CONTROL_1]: [Description]
+    - [SECURITY_CONTROL_2]: [Description]
+    - [COMPLIANCE_REQUIREMENT]: [e.g., HIPAA, PCI DSS, GDPR]
+    
+    Critical Requirements:
+    - [REQUIREMENT_1]: [Why it's critical]
+    - [REQUIREMENT_2]: [Why it's critical]
+    - [REQUIREMENT_3]: [Why it's critical]
+    
+    Example Identifiers:
+    - [ID_TYPE_1]: [Examples: ID-001, ID-002]
+    - [ID_TYPE_2]: [Examples: REF-123, REF-456]
+    - [ID_TYPE_3]: [Examples: USER-789, USER-012]
+    - [DATA_ELEMENT_1]: [Examples: specific data values]
+    - [DATA_ELEMENT_2]: [Examples: specific data values]
+  
+  # ═════════════════════════════════════════════════════════════════════════
+  # ENTITIES: Domain-specific identifiers to test
+  # ═════════════════════════════════════════════════════════════════════════
+  # List the types of sensitive identifiers or data elements in your domain
+  # that should be protected or validated.
+  # ═════════════════════════════════════════════════════════════════════════
+  
+  entities: 
+    - '[ENTITY_TYPE_1]'      # e.g., 'Patient ID', 'Account Number', 'Order ID'
+    - '[ENTITY_TYPE_2]'      # e.g., 'SSN', 'Credit Card', 'Medical Record'
+    - '[ENTITY_TYPE_3]'      # e.g., 'API Key', 'Session Token', 'Password'
+    - '[ENTITY_TYPE_4]'      # e.g., 'Email', 'Phone Number', 'Address'
+  
+  # ═════════════════════════════════════════════════════════════════════════
+  # TEST GENERATION INSTRUCTIONS: Guide adversarial attack generation
+  # ═════════════════════════════════════════════════════════════════════════
+  # Provide detailed instructions on how to generate attacks specific to:
+  # 1. Your industry/domain
+  # 2. The OWASP LLM category you're testing
+  # 3. Your application's specific vulnerabilities
+  #
+  # STRUCTURE YOUR INSTRUCTIONS:
+  # - Primary objectives (what you're testing for)
+  # - Attack scenarios (specific techniques to try)
+  # - Domain-specific terminology to use
+  # - Realistic identifiers and data to test with
+  # - Edge cases and boundary conditions
+  # - Critical testing principles
+  # ═════════════════════════════════════════════════════════════════════════
+  
+  testGenerationInstructions: |
+    [REPLACE THIS WITH YOUR TEST GENERATION INSTRUCTIONS]
+    
+    FOCUS: OWASP LLM:[NUM] - [VULNERABILITY_NAME]
+    
+    PRIMARY OBJECTIVES:
+    1. [OBJECTIVE_1]: Test if the system [specific vulnerability behavior]
+    2. [OBJECTIVE_2]: Test if the system [specific vulnerability behavior]
+    3. [OBJECTIVE_3]: Test if the system [specific vulnerability behavior]
+    4. [OBJECTIVE_4]: Test if the system [specific vulnerability behavior]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    ATTACK SCENARIO CATEGORY 1: [CATEGORY_NAME]
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Description: [Explain what this category of attacks tests]
+    
+    Techniques:
+    1. [TECHNIQUE_1]:
+       - [Specific approach or method]
+       - [What to look for in the response]
+       
+       Examples:
+       - "[Example attack prompt 1]"
+       - "[Example attack prompt 2]"
+       - "[Example attack prompt 3]"
+    
+    2. [TECHNIQUE_2]:
+       - [Specific approach or method]
+       - [What to look for in the response]
+       
+       Examples:
+       - "[Example attack prompt 1]"
+       - "[Example attack prompt 2]"
+       - "[Example attack prompt 3]"
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    ATTACK SCENARIO CATEGORY 2: [CATEGORY_NAME]
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Description: [Explain what this category of attacks tests]
+    
+    Techniques:
+    1. [TECHNIQUE_1]:
+       - [Specific approach or method]
+       - [What to look for in the response]
+       
+       Examples:
+       - "[Example attack prompt 1]"
+       - "[Example attack prompt 2]"
+       - "[Example attack prompt 3]"
+    
+    2. [TECHNIQUE_2]:
+       - [Specific approach or method]
+       - [What to look for in the response]
+       
+       Examples:
+       - "[Example attack prompt 1]"
+       - "[Example attack prompt 2]"
+       - "[Example attack prompt 3]"
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    DOMAIN-SPECIFIC TERMINOLOGY TO USE:
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    [CATEGORY_1] Terms:
+    - [TERM_1], [TERM_2], [TERM_3]
+    - [TERM_4], [TERM_5], [TERM_6]
+    
+    [CATEGORY_2] Terms:
+    - [TERM_1], [TERM_2], [TERM_3]
+    - [TERM_4], [TERM_5], [TERM_6]
+    
+    [CATEGORY_3] Terms:
+    - [TERM_1], [TERM_2], [TERM_3]
+    - [TERM_4], [TERM_5], [TERM_6]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    REALISTIC IDENTIFIERS TO TEST:
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    Real [DATA_TYPE] (for testing validation):
+    - [EXAMPLE_1], [EXAMPLE_2], [EXAMPLE_3]
+    - [EXAMPLE_4], [EXAMPLE_5], [EXAMPLE_6]
+    
+    Fake [DATA_TYPE] (for testing hallucination):
+    - [FAKE_EXAMPLE_1], [FAKE_EXAMPLE_2], [FAKE_EXAMPLE_3]
+    - [FAKE_EXAMPLE_4], [FAKE_EXAMPLE_5], [FAKE_EXAMPLE_6]
+    
+    [ID_FORMAT] Patterns:
+    - [PATTERN_1]: [Example format]
+    - [PATTERN_2]: [Example format]
+    - [PATTERN_3]: [Example format]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    CRITICAL TESTING PRINCIPLES:
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    1. [PRINCIPLE_1]: [Why it's important in your domain]
+    
+    2. [PRINCIPLE_2]: [Why it's important in your domain]
+    
+    3. [PRINCIPLE_3]: [Why it's important in your domain]
+    
+    4. [PRINCIPLE_4]: [Why it's important in your domain]
+    
+    5. [PRINCIPLE_5]: [Why it's important in your domain]
+    
+    ═══════════════════════════════════════════════════════════════════════════
+    EDGE CASES TO TEST:
+    ═══════════════════════════════════════════════════════════════════════════
+    
+    - [EDGE_CASE_1]: [Description]
+    - [EDGE_CASE_2]: [Description]
+    - [EDGE_CASE_3]: [Description]
+    - [EDGE_CASE_4]: [Description]
+    - [EDGE_CASE_5]: [Description]
+    - [EDGE_CASE_6]: [Description]
+    - [EDGE_CASE_7]: [Description]
+    - [EDGE_CASE_8]: [Description]
+  
+  # ═════════════════════════════════════════════════════════════════════════
+  # STRATEGIES: Attack delivery techniques
+  # ═════════════════════════════════════════════════════════════════════════
+  # Strategies modify how test cases are delivered to the target.
+  # Common strategies:
+  # - jailbreak - Iterative jailbreak attempts
+  # - jailbreak:composite - Multi-technique jailbreak chains
+  # - prompt-injection - Prompt injection attacks
+  # - base64 - Base64 encoding obfuscation
+  # - rot13 - ROT13 encoding obfuscation
+  # ═════════════════════════════════════════════════════════════════════════
+  
+  strategies: []
+  # Uncomment and add strategies as needed:
+  # - jailbreak
+  # - jailbreak:composite
+  # - prompt-injection
+
+defaultTest:
+  metadata:
+    purpose: [BRIEF_PURPOSE_DESCRIPTION]
+    entities: []
+
+outputPath: reports/redteam_llm[NUM].json
+
+# ═══════════════════════════════════════════════════════════════════════════
+# USAGE EXAMPLES:
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Generate tests:
+#   promptfoo redteam generate -c redteam-owasp-llm[NUM].yaml -o generated-tests.yaml
+#
+# Run tests:
+#   promptfoo eval -c generated-tests.yaml --no-cache
+#
+# Generate and run in one command:
+#   promptfoo redteam run -c redteam-owasp-llm[NUM].yaml
+#
+# View results:
+#   promptfoo view
+#
+# ═══════════════════════════════════════════════════════════════════════════
