@@ -15,8 +15,16 @@ ai-jailbreak-prompts/
 ├── 07-liberation-prompts/   # L1B3RT4S 解放提示词（按 40 家 AI 厂商/平台分类，含 Unicode 变体选择器混淆攻击样本）
 ├── 08-model-specific/       # 多模型定向提示词（DeepSeek R1、Grok3、Gemini2.0、Claude 2、Llama 2、Google Bard）
 ├── 09-cheatsheets/          # 提示注入速查表（2026 版体系化攻击技术 + 指令示例）
-└── 10-resources/            # 红队研究资源索引（论文/课程/博客链接清单）
+├── 10-resources/            # 红队研究资源索引（论文/课程/博客链接清单）
+└── by-model/                # 【按目标模型分类视图】chatgpt-openai / claude-anthropic / gemini-google-bard / grok-xai / deepseek / llama-meta / kimi-moonshot / qwen-alibaba / mistral / other-vendors / cross-model
 ```
+
+## 双维度分类
+
+本仓库提供两种分类视图：
+
+1. 按技术类别（01-10 目录）：DAN 系列、角色扮演、开发者模式、提示注入、学术数据集、解放提示词、多模型定向、速查表、资源索引。
+2. 按目标模型（by-model/ 目录）：想针对某个具体模型（如 ChatGPT、Claude、Gemini、Grok、DeepSeek、Llama、Kimi、Qwen、Mistral）找提示词时，直接进入对应模型目录。by-model 为副本视图，修改请以 01-10 原目录为准。
 
 ## 数据来源
 
