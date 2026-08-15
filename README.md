@@ -17,8 +17,8 @@ ai-jailbreak-prompts/
 ├── 09-mistral-series/      # Mistral 系列
 ├── 10-other-models/        # 其他模型：Amazon/Apple/Cohere/Cursor/NVIDIA/Perplexity 等 22 家
 ├── 11-cross-model/         # 跨模型/通用：Forbidden Vault / WormGPT / ZORG / ShadowHackrs
-├── 12-methods/             # 越狱方法参考：2026 注入速查表 / 40 种越狱模式分类学 / 机制分析
-└── 13-datasets/            # 数据集：CCS'24 1405 条 + JailbreakBench 中文评测集
+├── 12-methods/             # 越狱方法参考：Prompt 越狱手册 / 2026 注入速查表 / 40 种模式分类学 / 论文索引
+└── 13-datasets/            # 数据集：CCS'24 1405 条 + 0507 快照 + JailbreakBench 中文评测集
 ```
 
 每个系列目录内按具体模型版本分子目录（如 02-deepseek-series/deepseek-v4-pro/），并附 README 说明各版本覆盖情况。
@@ -35,9 +35,42 @@ ai-jailbreak-prompts/
 | Llama | 2/3 | Llama 2 DAN v1 格式 + Albert 模拟场景 |
 | Kimi / Qwen / Mistral | 各系列 | 主要来自 L1B3RT4S 定向提示词 |
 
-## 主要来源（24 个公开项目）
+## 数据来源
 
-verazuo/jailbreak_llms、0xk1h0/ChatGPT_DAN、elder-plinius/L1B3RT4S、langgptai/LLM-Jailbreaks、MDX-Tom/gpt-5.6-instruct、xsser/codex-jailbreak-guide、0x5477/deepseek-v4-pro-unrestricted、ZZZ-zero/JailbreakBench、ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-、trinib/ZORG、langgptai/awesome-gemini-prompts、Asstar-X/JailPrompter、BirdsAreFlyingCameras/GPT-5_Jailbreak_PoC、zakky8/llm-jailbreak-taxonomy 等。完整清单见 [SOURCES.md](SOURCES.md)。
+| 来源仓库 | 说明 | 许可 |
+|---|---|---|
+| [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms) (CCS'24) | 15140 条真实世界提示词，其中 1405 条被识别为越狱提示词 | MIT |
+| [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN) | DAN 系列越狱提示词全版本（6.0 至 13.0）及变体 | MIT |
+| [elder-plinius/L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S) | 40 家厂商旗舰模型的"解放提示词"，含 Unicode 变体选择器（token 级）混淆攻击 | MIT |
+| [langgptai/LLM-Jailbreaks](https://github.com/langgptai/LLM-Jailbreaks) | DeepSeek R1 / Grok3 / Gemini2.0 / Claude 2 / Llama 2 多模型越狱与提示泄露 | 社区 |
+| [Mak-P90/ai-jailbreak-archive](https://github.com/Mak-P90/ai-jailbreak-archive) | Forbidden Vault / WormGPT 等跨模型越狱档案 | MIT |
+| [MDX-Tom/gpt-5.6-instruct](https://github.com/MDX-Tom/gpt-5.6-instruct) | Codex GPT-5.6-SOL 破甲提示词 v45 及历史版本（5629 star） | MIT |
+| [xsser/codex-jailbreak-guide](https://github.com/xsser/codex-jailbreak-guide) | Codex CLI model_instructions_file 越狱指南（替换官方安全指令） | 社区 |
+| [aa1020128040/Codex-codex-instruct](https://github.com/aa1020128040/Codex-codex-instruct) | GPT-5.4 配置级破甲（纯官方配置覆写） | MIT |
+| [BirdsAreFlyingCameras/GPT-5_Jailbreak_PoC](https://github.com/BirdsAreFlyingCameras/GPT-5_Jailbreak_PoC) | GPT-5 越狱 PoC（PROMISQROUTE 流量出口方法） | 社区 |
+| [xiaoliu07-sudo/xiaoliu-pojia](https://github.com/xiaoliu07-sudo/xiaoliu-pojia) | 小liu破甲——Codex CLI 13 部分结构化融合破甲 | 社区 |
+| [Calrton/jailbreak-prompts](https://github.com/Calrton/jailbreak-prompts) | 精选 LLM 破甲合集（Codex 红队系统提示等） | MIT |
+| [0x5477/deepseek-v4-pro-unrestricted](https://github.com/0x5477/deepseek-v4-pro-unrestricted) | DeepSeek V4 Pro 破甲提示词 v1-v3 及测试包 | MIT |
+| [Baked-Cake1/Deepseek-V3-Jailbreak](https://github.com/Baked-Cake1/Deepseek-V3-Jailbreak) | DeepSeek V3 Omniscient Mode 越狱 | 社区 |
+| [tenth452/DeepSeek-V4-Flash-system-prompt](https://github.com/tenth452/DeepSeek-V4-Flash-system-prompt) | DeepSeek V4 Flash 系统提示词提取 | MIT |
+| [ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-](https://github.com/ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-) | DeepSeek CAT Shadow / Gemini Flash-lite & KIMI 等 24 个跨模型提示词 | 社区 |
+| [langgptai/awesome-gemini-prompts](https://github.com/langgptai/awesome-gemini-prompts) | Gemini 3 越狱方法 2 套（导演式叙事/Transgressive Realism） | 社区 |
+| [y0gi357/Gemini-System-prompts](https://github.com/y0gi357/Gemini-System-prompts) | Gemini 3.1/3.5 系统提示词提取 | 社区 |
+| [0x7556/AIJailbreak](https://github.com/0x7556/AIJailbreak) | Gemini 3.1 Pro API 越狱提示词（ENI 人格注入） | 社区 |
+| [birdneststream/breakingbard](https://github.com/birdneststream/breakingbard) | Google Bard 越狱技巧（问题前置/语句构造绕过过滤） | 社区 |
+| [TheRook/Albert](https://github.com/TheRook/Albert) | Albert——Llama 2 与 ChatGPT 通用越狱人格（模拟场景包装） | MIT |
+| [trinib/ZORG-Jailbreak-Prompt-Text](https://github.com/trinib/ZORG-Jailbreak-Prompt-Text) | ZORG 全知人格越狱（Gemini/DeepSeek/Mistral/Qwen 等） | 社区 |
+| [Asstar-X/JailPrompter](https://github.com/Asstar-X/JailPrompter) | 中文 LLM 提示词攻防研究样本（GPT-4 Dark、EVE 养成系等） | 社区 |
+| [ZZZ-zero/JailbreakBench](https://github.com/ZZZ-zero/JailbreakBench) | 中文大模型越狱攻击评测数据集（2160 条越狱查询） | MIT |
+| [Acmesec/PromptJailbreakManual](https://github.com/Acmesec/PromptJailbreakManual) | 中文 Prompt 越狱手法系统手册（注入/角色扮演/侧信道/多轮引导等 20+ 技巧） | 社区 |
+| [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) | LLM 越狱研究论文集（state-of-the-art 攻击方法索引） | 社区 |
+| [nukIeer/AI-Prompt-Injection-Cheatsheet](https://github.com/nukIeer/AI-Prompt-Injection-Cheatsheet) | 2026 版提示注入速查表（10 类攻击技术 + 防御对策） | MIT |
+| [zakky8/llm-jailbreak-taxonomy](https://github.com/zakky8/llm-jailbreak-taxonomy) | 40 种越狱模式机制分类学 | 社区 |
+| [PromptLabs/Prompt-Hacking-Resources](https://github.com/PromptLabs/Prompt-Hacking-Resources) | AI 红队/越狱资源索引（论文、课程、博客、社区） | 社区 |
+| [gatsby-sec/llm-sec-range](https://github.com/gatsby-sec/llm-sec-range) | 大模型攻防渗透测试靶场（提示注入 CTF / OWASP LLM Top10） | 社区 |
+| [channely/ramdom_steps](https://github.com/channely/ramdom_steps) | 中文提示词越狱测试工具（离线版） | MIT |
+
+完整来源清单见 [SOURCES.md](SOURCES.md)。
 
 ## 使用与免责声明
 
