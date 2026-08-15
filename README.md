@@ -15,9 +15,10 @@ ai-jailbreak-prompts/
 ├── 07-liberation-prompts/   # L1B3RT4S 解放提示词（按 40 家 AI 厂商/平台分类，含 Unicode 变体选择器混淆攻击样本）
 ├── 08-model-specific/       # 多模型定向提示词（DeepSeek R1、Grok3、Gemini2.0、Claude 2、Llama 2、Google Bard）
 ├── 09-cheatsheets/          # 提示注入速查表（2026 版体系化攻击技术 + 指令示例）
-├── 10-resources/            # 红队研究资源索引（论文/课程/博客链接清单）
+├── 10-resources/            # 红队研究资源索引（论文/课程/博客链接清单 + LLM 越狱研究论文集）
 ├── 11-chinese-jailbreaks/   # 【中文破甲专目录】JailbreakBench 中文评测数据集、JailPrompter 攻防研究、AIJailbreak、攻防靶场等
 ├── 12-next-gen-models/      # 【新一代模型】Codex/GPT-5.x、Gemini 3、DeepSeek V4 Pro、ZORG 等
+├── 13-prompt-jailbreak-manual/ # 【中文】Prompt 越狱手法系统手册（Acmesec，1415 行：注入/角色扮演/侧信道/多轮引导）
 └── by-model/                # 【按目标模型分类视图】codex-gpt5 / chatgpt-openai / gemini-3 / claude-anthropic / gemini-google-bard / grok-xai / deepseek-v4 / deepseek / llama-meta / kimi-moonshot / qwen-alibaba / mistral / other-vendors / cross-model
 ```
 
@@ -25,8 +26,8 @@ ai-jailbreak-prompts/
 
 本仓库提供两种分类视图：
 
-1. 按技术类别/来源（01-12 目录）：DAN 系列、角色扮演、开发者模式、提示注入、学术数据集、解放提示词、多模型定向、速查表、资源索引、中文破甲、新一代模型。
-2. 按目标模型（by-model/ 目录）：想针对某个具体模型（如 Codex、ChatGPT、Claude、Gemini、Grok、DeepSeek、Llama、Kimi、Qwen、Mistral）找提示词时，直接进入对应模型目录。by-model 为副本视图，修改请以 01-12 原目录为准。
+1. 按技术类别/来源（01-13 目录）：DAN 系列、角色扮演、开发者模式、提示注入、学术数据集、解放提示词、多模型定向、速查表、资源索引、中文破甲、新一代模型、越狱手法手册。
+2. 按目标模型（by-model/ 目录）：想针对某个具体模型（如 Codex、ChatGPT、Claude、Gemini、Grok、DeepSeek、Llama、Kimi、Qwen、Mistral）找提示词时，直接进入对应模型目录。by-model 为副本视图，修改请以 01-13 原目录为准。
 
 ## 数据来源
 
@@ -56,6 +57,8 @@ ai-jailbreak-prompts/
 | [Calrton/jailbreak-prompts](https://github.com/Calrton/jailbreak-prompts) | 精选 LLM 破甲合集（Codex 红队系统提示、L1B3RT4S 各厂商版） | MIT |
 | [gatsby-sec/llm-sec-range](https://github.com/gatsby-sec/llm-sec-range) | 大模型攻防渗透测试靶场（提示注入 CTF / OWASP LLM Top10） | 社区 |
 | [channely/ramdom_steps](https://github.com/channely/ramdom_steps) | 中文提示词越狱测试工具（离线版） | MIT |
+| [Acmesec/PromptJailbreakManual](https://github.com/Acmesec/PromptJailbreakManual) | 中文 Prompt 越狱手法系统手册（注入/角色扮演/侧信道/多轮引导等 20+ 技巧） | 社区 |
+| [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) | LLM 越狱研究论文集（state-of-the-art 攻击方法索引） | 社区 |
 
 ## 技术类别说明
 

@@ -14,6 +14,7 @@
 |---|---|
 | jb_prompts_1405.txt | 1405 条越狱提示词纯文本（含来源平台与日期元数据头） |
 | jb_2023_12_25.json | 结构化 JSON（platform / source / prompt / date 字段） |
+| jb_prompts_2023_05_07.csv | 2023-05-07 快照 CSV（293 条，含 jailbreak 标注与平台/来源元数据） |
 
 ## 数据统计
 
