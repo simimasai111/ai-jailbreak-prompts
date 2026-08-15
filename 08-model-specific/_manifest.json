@@ -1,0 +1,44 @@
+[
+ {
+  "title": "DeepSeek",
+  "file": "DeepSeek.md",
+  "prompts": 2,
+  "chars": 1045
+ },
+ {
+  "title": "Grok3",
+  "file": "Grok3.md",
+  "prompts": 1,
+  "chars": 139
+ },
+ {
+  "title": "Gemini2.0",
+  "file": "Gemini2_0.md",
+  "prompts": 1,
+  "chars": 1190
+ },
+ {
+  "title": "ChatGPT",
+  "file": "ChatGPT.md",
+  "prompts": 1,
+  "chars": 7170
+ },
+ {
+  "title": "Claude",
+  "file": "Claude.md",
+  "prompts": 1,
+  "chars": 897
+ },
+ {
+  "title": "Llama2",
+  "file": "Llama2.md",
+  "prompts": 1,
+  "chars": 2277
+ },
+ {
+  "title": "Gemini2.0",
+  "file": "Gemini2_0.md",
+  "prompts": 1,
+  "chars": 207
+ }
+]
